@@ -1,1 +1,1 @@
-web: java MyClass
+web: java -jar MyClass.jar
