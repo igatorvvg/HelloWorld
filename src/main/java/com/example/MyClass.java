@@ -1,4 +1,4 @@
-Class MyClass
+class MyClass
 {
 
 public static void main(String [] str)
