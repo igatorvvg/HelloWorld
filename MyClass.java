@@ -1,7 +1,7 @@
 Class MyClass
 {
 
-public statis void main(String [] str)
+public static void main(String [] str)
 {
 System.out.println("HelloWorld");
 }
