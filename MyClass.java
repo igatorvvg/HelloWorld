@@ -3,6 +3,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.net.URISyntaxException;
 import java.net.URI;
 class MyClass
 {
@@ -23,6 +24,7 @@ System.out.println("Creating a connection to postgress database");
 		
 		
 	//Connection con=DriverManager.getConnection("DATABASE_URL");
+
 	System.out.println("Connected to PostgreSQL database!");
 	Statement statement = con.createStatement();
 	System.out.println("Reading db records...");
@@ -33,6 +35,11 @@ System.out.println("Creating a connection to postgress database");
 		System.out.printf(resultSet.getString("name"), resultSet.getString("sfid"));
 	}
 
+	}
+	catch (URISyntaxException e) {
+			System.out.println("Connection failure.");
+			e.printStackTrace();
+		
 	}
 	catch (SQLException e) {
 			System.out.println("Connection failure.");
