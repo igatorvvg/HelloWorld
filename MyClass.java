@@ -16,11 +16,15 @@ System.out.println("Creating a connection to postgress database");
 	try
 	{
 	 URI dbUri = new URI(System.getenv("DATABASE_URL"));
+	 System.out.println("dbUri is "+dbUri);
 
 	 String username = dbUri.getUserInfo().split(":")[0];
+	 System.out.println("username  is "+username );
 	 String password = dbUri.getUserInfo().split(":")[1];
+	 System.out.println(" password is "+ password );
 	 String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
-         Connection con= DriverManager.getConnection(dbUrl, username, password);		
+	 System.out.println(" dbUrl is "+ dbUrl +"...... getting connection now.........");
+	 Connection con= DriverManager.getConnection(dbUrl, username, password);		
 		
 		
 	//Connection con=DriverManager.getConnection("DATABASE_URL");
@@ -37,14 +41,19 @@ System.out.println("Creating a connection to postgress database");
 
 	}
 	catch (URISyntaxException e) {
-			System.out.println("Connection failure.");
+			System.out.println("URI exception caused Connection failure.");
 			e.printStackTrace();
 		
 	}
 	catch (SQLException e) {
-			System.out.println("Connection failure.");
+			System.out.println("SQL Exception caused Connection failure.");
 			e.printStackTrace();
 		
+	}
+	catch(Exception e)
+	{
+			System.out.println(" general exception caused Connection failure.");
+			e.printStackTrace();
 	}
 
 }
