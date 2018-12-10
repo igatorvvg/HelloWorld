@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.net.URISyntaxException;
 import java.net.URI;
-class MyClass
+public class MyClass
 {
 
 public static void main(String [] str)
