@@ -18,14 +18,20 @@ System.out.println("Creating a connection to postgress database");
 	 URI dbUri = new URI(System.getenv("DATABASE_URL"));
 	 System.out.println("dbUri is "+dbUri);
 
-	 String username = dbUri.getUserInfo().split(":")[0];
+	 /*String username = dbUri.getUserInfo().split(":")[0];
 	 System.out.println("username  is "+username );
 	 String password = dbUri.getUserInfo().split(":")[1];
 	 System.out.println(" password is "+ password );
 	 String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
 	 System.out.println(" dbUrl is "+ dbUrl +"...... getting connection now.........");
-	 Connection con= DriverManager.getConnection(dbUrl, username, password);		
-		
+	 Connection con= DriverManager.getConnection(dbUrl, username, password);*/		
+	 String username = "jyqvcvchuuoqmc";
+	 System.out.println("username  is "+username );
+	 String password = "6f9d65aa72de601e057373cc87686b53051c381fbb6ba844aee84121ebe7c749";
+	 System.out.println(" password is "+ password );
+	 String dbUrl = "jdbc:postgresql://ec2-23-21-65-173.compute-1.amazonaws.com:5432/d1sddcrm86kr5n";
+	 System.out.println(" dbUrl is "+ dbUrl +"...... getting connection now.........");
+	 Connection con= DriverManager.getConnection(dbUrl, username, password);
 		
 	//Connection con=DriverManager.getConnection("DATABASE_URL");
 
