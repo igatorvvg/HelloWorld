@@ -12,7 +12,9 @@
            <groupId>org.postgresql</groupId>
            <artifactId>postgresql</artifactId>
            <version>9.4.1208</version>
-          </dependeny>42.1.1</dependencies>
+          </dependeny>42.1.1
+         </dependency>      
+   </dependencies>
          
         
            <build>
