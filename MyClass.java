@@ -3,6 +3,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.net.URI;
 class MyClass
 {
 
@@ -13,7 +14,15 @@ System.out.println("Creating a connection to postgress database");
 
 	try
 	{
-	Connection con=DriverManager.getConnection("//jdbc:postgresql://ec2-23-21-65-173.compute-1.amazonaws.com:5432/d1sddcrm86kr5n","jyqvcvchuuoqmc","6f9d65aa72de601e057373cc87686b53051c381fbb6ba844aee84121ebe7c749");
+	 URI dbUri = new URI(System.getenv("DATABASE_URL"));
+
+	 String username = dbUri.getUserInfo().split(":")[0];
+	 String password = dbUri.getUserInfo().split(":")[1];
+	 String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
+         Connection con= DriverManager.getConnection(dbUrl, username, password);		
+		
+		
+	//Connection con=DriverManager.getConnection("DATABASE_URL");
 	System.out.println("Connected to PostgreSQL database!");
 	Statement statement = con.createStatement();
 	System.out.println("Reading db records...");
