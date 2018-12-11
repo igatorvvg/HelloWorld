@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:"target/dependency/*" MyClass --port $PORT
+web: java -jar MyClass.jar
