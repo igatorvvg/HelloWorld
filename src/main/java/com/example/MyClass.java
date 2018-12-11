@@ -45,7 +45,7 @@ System.out.println("Creating a connection to postgress database");
 	ResultSet resultSet = statement.executeQuery("select * from salesforce.contact fetch first 3 rows only");
 	while (resultSet.next()) 
 	{
-		System.out.println(resultSet.getString("name"), resultSet.getString("sfid"));
+		System.out.printf(resultSet.getString("name"), resultSet.getString("sfid"));
 	}
 
 	}
