@@ -46,6 +46,7 @@ System.out.println("Creating a connection to postgress database");
 	while (resultSet.next()) 
 	{
 		System.out.printf(" Name is: "+resultSet.getString("name") + " and SFid is " + resultSet.getString("sfid"));
+		System.out.println("-------------------------------");
 	}
 
 	}
